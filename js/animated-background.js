@@ -9,15 +9,15 @@
 
     function initHeader() {
         width = window.innerWidth;
-        height = 700;
+        height = 800;
         target = {x: width/2, y: height/2};
 
         largeHeader = document.getElementById('large');
-        largeHeader.style.height = 700+'px';
+        largeHeader.style.height = 800+'px';
 
         canvas = document.getElementById('draw');
         canvas.width = width;
-        canvas.height = 700;
+        canvas.height = 800;
         ctx = canvas.getContext('2d');
 
         // create points

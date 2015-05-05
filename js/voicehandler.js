@@ -21,6 +21,7 @@ function annyangThread(callback){
             }
         };
            function buyOnEbay(keywordString){
+              console.log("buy")
               requestEbay(keywordString, function(data){
                 callback(data);
               });
