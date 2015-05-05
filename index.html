@@ -48,7 +48,71 @@
 	if (annyang) {
 
   	// Let's define our first command. First the text we expect, and then the function it should call
-  	var commands = {
+  	  	var commands = {
+  	  		//Hello. Welcome to Lawrence's website. I am Larry Bot, Lawrence's smart personal assistant. I am still under construction, so I am afraid I won't be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.
+  		'Add Lawrence on *name':function(keywordString) {
+  			responsiveVoice.speak("Adding Lawrence on " + keywordString,'UK English Male');
+  			var user = '';
+
+  			if(keywordString.toLowerCase() == 'facebook') {
+  				user = 'lawrence.murata';
+  			} else if (keywordString.toLowerCase() == 'instagram') {
+  				user = 'lawrence_lm'
+  			} else if (keywordString.toLowerCase() == 'linkedin' || keywordString.toLowerCase() == 'linked in') {
+  				user = 'in/lawrencelm'
+  			} else if (keywordString.toLowerCase() == 'medium') {
+  				user = '@lawlm'
+  			} else if (keywordString.toLowerCase() == 'twitter') {
+  				user = 'lawlm'
+  			} else if (keywordString.toLowerCase() == 'onetune') {
+				window.open('http://onetune.fm/u/lawrence.murata/p/lawrences-playlist');
+				return;
+			} else if (keywordString.toLowerCase() == 'github') {
+				user = 'lawrencelm'
+			} else {
+				window.open('http://onetune.fm/u/lawrence.murata/p/lawrences-playlist');
+				return;
+			}
+
+  			window.open('http://' + keywordString + '.com/' + user);
+
+  		},
+
+  		'Follow Lawrence on *name':function(keywordString) {
+  			responsiveVoice.speak("Following Lawrence on " + keywordString,'UK English Male');
+  			var user = '';
+
+  			if(keywordString.toLowerCase() == 'facebook') {
+  				user = 'lawrence.murata';
+  			} else if (keywordString.toLowerCase() == 'instagram') {
+  				user = 'lawrence_lm'
+  			} else if (keywordString.toLowerCase() == 'linkedin' || keywordString.toLowerCase() == 'linked in') {
+  				user = 'in/lawrencelm'
+  			} else if (keywordString.toLowerCase() == 'medium') {
+  				user = '@lawlm'
+  			} else if (keywordString.toLowerCase() == 'twitter') {
+  				user = 'lawlm'
+  			} else if (keywordString.toLowerCase() == 'onetune') {
+				window.open('http://onetune.fm/u/lawrence.murata/p/lawrences-playlist');
+				return;
+			} else if (keywordString.toLowerCase() == 'github') {
+				user = 'lawrencelm'
+			} else {
+				window.open('http://onetune.fm/u/lawrence.murata/p/lawrences-playlist');
+				return;
+			}
+
+  			window.open('http://' + keywordString + '.com/' + user);
+
+  		},
+
+  		'42':function() {
+  			responsiveVoice.speak("42 is the Answer to the Ultimate Question of Life, the Universe and Everything.",'UK English Male');
+  		},
+
+  		'fuck':function() {
+  			responsiveVoice.speak("watch your language!",'UK English Male');
+  		},
 
   		'What is (Nano-engineered) Chips (for Wearables)':function() {
   			    		responsiveVoice.speak("Developed flexible chips using polyamide substrates (for flexible boards) with metal circuits (E-Beam Evaporation) in the Stanford Nanotechnology Laboratory, experimenting and researching different designs, methods and materials to study and develop flexible chips for wearable computers. In addition to optimizing results for the chips, this independent project also resulted in low-cost products for wearables.",'UK English Male');
@@ -78,6 +142,8 @@
   		},
 
     	'(Larry) (Bot) tell me a joke': function() {
+    		var randomnumber = Math.floor(Math.random()*11) //random number from 0 to 10
+    		//going to use this to implement multiple jokes. all CS jokes
     		responsiveVoice.speak("Whats the object-oriented way to become wealthy?",'UK English Male');
     		responsiveVoice.speak("Inheritance",'UK English Male');
     	},
