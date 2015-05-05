@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+	<head>
+        
+        <!-- Meta tag -->
+        <meta name="description" content="Personal website">
+		<meta name="keywords" content="Lawrence Lin Murata, Lawrence, Murata, Lin, Lawrence Murata, blog, Stanford, University, college, education, entrepreneur, technology, idea">
+		<meta name="author" content="Lawrence Lin Murata">
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta property="og:image" content="images/law.jpg"/>
+		<meta property="og:image" content="images/law2.jpg"/>
+        
+        <!-- Konami Code Easter Egg -->
+        <script src="js/konami.js" type="text/javascript"></script>
+        
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+		<title>Larry Bot</title>
+
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.poptrox.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="annyang/annyang.js"></script>
+
+	<script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
+	<!--<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/annyang.min.js"></script>-->
+	<script>
+
+	function sleep(miliseconds) {
+           var currentTime = new Date().getTime();
+
+           while (currentTime + miliseconds >= new Date().getTime()) {
+           }
+       }
+
+
+	if (annyang) {
+
+  	// Let's define our first command. First the text we expect, and then the function it should call
+  	var commands = {
+
+  		'What is (Nano-engineered) Chips (for Wearables)':function() {
+  			    		responsiveVoice.speak("Developed flexible chips using polyamide substrates (for flexible boards) with metal circuits (E-Beam Evaporation) in the Stanford Nanotechnology Laboratory, experimenting and researching different designs, methods and materials to study and develop flexible chips for wearable computers. In addition to optimizing results for the chips, this independent project also resulted in low-cost products for wearables.",'UK English Male');
+  		},
+
+  		'How old is Lawrence?':function() {
+  			    		responsiveVoice.speak("Lawrence is 20 years old",'UK English Male');
+  		},
+
+  		'How are you (doing) (today)?':function() {
+  			    		responsiveVoice.speak("I am doing well. Thanks for asking!",'UK English Male');
+  		},
+
+  		'Email Lawrence':function() {
+  			  	responsiveVoice.speak("Perfect! I have just set up the email message for you. Depending on the browser you are using, you might need to allow pop-ups.",'UK English Male');
+  				window.open('mailto:lawrence@lawrencemurata.com?subject=Hi&body=Write your email here! - Larry Bot');
+  		},
+
+  		'Call Lawrence':function() {
+  			  	responsiveVoice.speak("Great! I am calling Lawrence for you.",'UK English Male');
+  				window.open('tel:6503903867');
+  		},
+
+  		'Give me Lawrence\'s resume':function() {
+  			  	responsiveVoice.speak("Here is his resume! Let me know if you have any questions.",'UK English Male');
+  				window.open('http://resume.lawrencemurata.com/');
+  		},
+
+    	'(Larry) (Bot) tell me a joke': function() {
+    		responsiveVoice.speak("Whats the object-oriented way to become wealthy?",'UK English Male');
+    		responsiveVoice.speak("Inheritance",'UK English Male');
+    	},
+
+    	 'Larry Bot': function() {
+    		responsiveVoice.speak("Whats the object-oriented way to become wealthy?",'UK English Male');
+    		responsiveVoice.speak("Inheritance",'UK English Male');
+    	},
+
+    	'(Larry Bot) What is OneTune': function() {
+    		responsiveVoice.speak("OneTune is the world's free, open music platform. It lets you listen to and collect millions of organized songs for free, no matter where you live or what language you speak. Go to OneTune.fm to have access to over 5 million songs, with zero ads, 100% free.",'UK English Male');
+    	},
+
+    	'(Larry Bot) What is SmartBox': function() {
+    		responsiveVoice.speak("SmartBox is, like me, a web-based personal assistant. It recognizes what the you need and connects you to the right service. It can process language, recognize voice and measure your brain activity (through our hardware BrainBox, which measures your body’s resistance) to understand your needs. Hungry? Ask SmartBox to bring you food. Stressed? When BrainBox measures high levels of stress, it plays calm songs. (arduino, javascript, node.js, several APIs)",'UK English Male');
+    	},
+
+    	'Hello (Lawrence)': function() {
+    		console.log('show tps report')
+      		responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+    	},
+
+    	'(Larry Bot) Hello (Larry Bot)': function() {
+    		console.log('show tps report')
+      		responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+    	},
+
+    	'(Larry Bot) Hi (Larry Bot)': function() {
+    		console.log('show tps report')
+      		responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+    	},
+
+    	'Hello (Larry)': function() {
+    		console.log('show tps report')
+      		responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+    	},
+
+
+    	'Hi (Larry)': function() {
+    		console.log('show tps report')
+      		responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+    	},
+
+    	'Hi (Lawrence)': function() {
+    		console.log('show tps report')
+      		responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+    	}
+
+  	};
+
+  	// Add our commands to annyang
+  	annyang.addCommands(commands);
+
+  	// Start listening. You can call this here, or attach this call to an event, button, etc.
+  	annyang.start();
+	}
+	</script>
+
+	    <!--<script src="app.js"></script>-->
+       <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.0.min.js"></script>
+        <script src="annyang/annyang.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/freebase/suggest/4_2/suggest.min.css">
+        <script type="text/javascript" src="https://www.gstatic.com/freebase/suggest/4_2/suggest.min.js"></script>-->
+</head>
+
+<body>
+        
+        
+        <script src="js/ebayAPIHandler.js"></script>
+        <script src="js/flickrAPIHandler.js"></script>
+        <script src="js/spotifyAPIHandler.js"></script>
+
+        <script type="text/javascript" src="js/voicehandler.js"></script>
+
+        <!-- KONAMI EATER EGG YAY -->
+        <script type="text/javascript">
+            var easter_egg = new Konami(function() { window.open("https://www.google.com/search?q=atari+breakout&espv=210&es_sm=91&source=lnms&tbm=isch&sa=X&ei=SvUsU4WKK47ooASm7oHACw&sqi=2&ved=0CAcQ_AUoAQ&biw=1161&bih=537#imgdii=_")});
+        </script>
+			
+
+        <section id="cta" class="main style1">
+        <div class="animated-bg">
+            <div class="content">
+                <div id="large">
+                    <canvas id="draw"></canvas>
+                    <div class="container">
+              <!--      	                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                    	<h3>Hi</h3>
+                    </div>
+                </div>-->
+              		<header>
+						<h3>I am Larry Bot</h3>
+					</header>
+					<p>Say "hi"! I'm Lawrence's smart personal assistant who helps him with daily tasks and also controls his website. How may I help you today? (Ask me to tell you a joke!)</p>
+					<footer>
+						<a href="http://lawrencemurata.com/" class="button style2 down">More</a>
+					</footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</section>
+    </section>
+
+			<!--Hey there, if you're looking into the source code, you might as well be interested in checking out my resume at www.resume.lawrencemurata.com-->
+                			<!-- Footer -->
+			<footer id="dark_footer">
+			
+					<!--
+				     	Social Icons
+				     
+				     	From here: http://fortawesome.github.io/Font-Awesome/cheatsheet/
+					-->
+					<ul class="actions">
+						<li><a href="https://twitter.com/lawlm" class="fa solo fa-twitter" target="_blank"><span>Twitter</span></a></li>
+						<li><a href="https://www.facebook.com/lawrence.murata" class="fa solo fa-facebook" target="_blank"><span>Facebook</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/lawrencelm" class="fa solo fa-linkedin" target="_blank"><span>Linkedin</span></a></li>
+                        <li><a href="http://instagram.com/lawrence_lm" class="fa solo fa-instagram" target="_blank"><span>Instagram</span></a></li>
+                        <li><a href="https://medium.com/@lawlm" class="fa solo fa-pencil" target="_blank"><span>Blog</span></a></li>
+                        <li><a href="http://onetune.fm/u/lawrence.murata/p/lawrences-playlist" class="fa solo fa-music" target="_blank"><span>OneTune.fm</span></a></li>
+
+					</ul>
+
+				<!-- Menu -->
+					<ul class="menu">
+						<li>&copy; <script type="text/javascript">
+  document.write(new Date().getFullYear());
+</script> | Lawrence Lin Murata</li>
+                        <li><a href="mailto:lawrence@lawrencemurata.com?Subject=Hi!"> lawrence@lawrencemurata.com</li>
+						<li></a></li>
+					</ul>
+			</footer>
+
+		<script src="js/TweenLite.min.js"></script>
+    	<script src="js/rAF.js"></script>
+		<script src="js/EasePack.min.js"></script>
+		<script src="js/animated-background.js"></script>
+	</body>
+	
+	<!-- Google Analytics-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49247758-1', 'lawrencemurata.com');
+  ga('send', 'pageview');
+    </script>
+
+</html>
