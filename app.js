@@ -38,7 +38,7 @@ if(getDirectories().length > 0)
 
 var app = express();
 
-app.use("", express.static("/Users/Lawrence/Documents/Git\ Hub/Law-Web/"));
+app.use("", express.static("/Users/Lawrence/Documents/Git\ Hub/LarryBot/"));
 
 app.get("/", function(req, res){
 	if(!concentration)

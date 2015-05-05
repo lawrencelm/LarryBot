@@ -34,23 +34,55 @@
 		<script src="annyang/annyang.js"></script>
 
 	<script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.6.0/annyang.min.js"></script>
+	<!--<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/annyang.min.js"></script>-->
 	<script>
+
+	function sleep(miliseconds) {
+           var currentTime = new Date().getTime();
+
+           while (currentTime + miliseconds >= new Date().getTime()) {
+           }
+       }
+
+
 	if (annyang) {
+
   	// Let's define our first command. First the text we expect, and then the function it should call
   	var commands = {
+
+  		'What is (Nano-engineered) Chips (for Wearables)':function() {
+  			    		responsiveVoice.speak("Developed flexible chips using polyamide substrates (for flexible boards) with metal circuits (E-Beam Evaporation) in the Stanford Nanotechnology Laboratory, experimenting and researching different designs, methods and materials to study and develop flexible chips for wearable computers. In addition to optimizing results for the chips, this independent project also resulted in low-cost products for wearables.",'UK English Male');
+  		},
+
+    	'(Larry) (Bot) tell me a joke': function() {
+    		responsiveVoice.speak("Whats the object-oriented way to become wealthy?",'UK English Male');
+    		responsiveVoice.speak("Inheritance",'UK English Male');
+    	},
+
+    	 'Larry Bot': function() {
+    		responsiveVoice.speak("Whats the object-oriented way to become wealthy?",'UK English Male');
+    		responsiveVoice.speak("Inheritance",'UK English Male');
+    	},
+
+    	'(Larry Bot) What is OneTune': function() {
+    		responsiveVoice.speak("OneTune is the world's free, open music platform. It lets you listen to and collect millions of organized songs for free, no matter where you live or what language you speak. Go to OneTune.fm to have access to over 5 million songs, with zero ads, 100% free.",'UK English Male');
+    	},
+
+    	'(Larry Bot) What is SmartBox': function() {
+    		responsiveVoice.speak("SmartBox is, like me, a web-based personal assistant. It recognizes what the you need and connects you to the right service. It can process language, recognize voice and measure your brain activity (through our hardware BrainBox, which measures your body’s resistance) to understand your needs. Hungry? Ask SmartBox to bring you food. Stressed? When BrainBox measures high levels of stress, it plays calm songs. (arduino, javascript, node.js, several APIs)",'UK English Male');
+    	},
 
     	'Hello (Lawrence)': function() {
     		console.log('show tps report')
       		responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
     	},
 
-    	'Hello (Larry Bot)': function() {
+    	'(Larry Bot) Hello (Larry Bot)': function() {
     		console.log('show tps report')
       		responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
     	},
 
-    	'Hi (Larry Bot)': function() {
+    	'(Larry Bot) Hi (Larry Bot)': function() {
     		console.log('show tps report')
       		responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
     	},
@@ -245,7 +277,7 @@
 						<font>
 						<h2>Hi.</h2>
 						<p>You can reach me at <a href="mailto:lawrence@lawrencemurata.com?Subject=Hi!">lawrence@lawrencemurata.com</a>.
-                        You can connect with my social media profiles below. If you need my resume, please feel free to email me. <a>Try the "Konami code" for fun easter egg - ception.</a><br></br>Say "hello" to Larry Bot, my personal assistant who helps me with daily tasks and also controls this website. Larry Bot can help you find anything you need. </p> <p></p>
+                        You can connect with my social media profiles below. If you need my resume, please feel free to email me. <a>Try the "Konami code" for fun easter egg - ception.</a><br></br>Say "hello" to Larry Bot, my personal assistant who helps me with daily tasks and also controls this website. Larry Bot can help you find anything you need. (Ask him to tell you a joke!) </p> <p></p>
 					</header>
 			</section>
 
