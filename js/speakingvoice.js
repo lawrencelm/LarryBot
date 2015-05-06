@@ -1,3 +1,8 @@
+//function annyangThread(callback){
+//  $.getScript("../annyang/annyang.js", function(){
+
+  console.log("annyang setup");
+
   function sleep(miliseconds) {
            var currentTime = new Date().getTime();
 
@@ -6,8 +11,32 @@
        }
 
 
-  if (annyang) {
+ /* function pause() {
+    annyang.pause();
+  }
 
+  function resume() {
+    annyang.resume();
+  }*/
+
+
+  if (annyang) {
+    console.log("there is annyang");
+
+    annyang.addCallback('pause', annyang.pause());
+
+    annyang.addCallback('resume', annyang.resume());
+
+    annyang.addCallback('abort', function() {
+      console.log("aborting");
+      annyang.abort();
+    });
+
+    annayng.addCallback('init', function() {
+      console.log("init");
+      annyang.init(commands, false);
+    }
+      );
     // Let's define our first command. First the text we expect, and then the function it should call
         var commands = {
           //Hello. Welcome to Lawrence's website. I am Larry Bot, Lawrence's smart personal assistant. I am still under construction, so I am afraid I won't be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.
@@ -172,7 +201,7 @@
       },
 
       '(Larry) (Bot) tell me a joke': function() {
-        var randomnumber = Math.floor(Math.random()*11) //random number from 0 to 10
+        var randomnumber = Math.floor(Math.random()*11); //random number from 0 to 10
         //going to use this to implement multiple jokes. all CS jokes
         responsiveVoice.speak("Whats the object-oriented way to become wealthy?",'UK English Male');
         responsiveVoice.speak("Inheritance",'UK English Male');
@@ -214,12 +243,44 @@
 
       'Hi (Larry)': function() {
         console.log('show tps report')
-          responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+        responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
       },
 
       'Hi (Lawrence)': function() {
         console.log('show tps report')
           responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+      },
+
+      'Steve Jobs (Steve Jobs)': function() {
+        responsiveVoice.speak("Did you mean God?",'UK English Male');
+      },
+
+      'Sorry I did not understand (what you meant by) *command': function(command) {
+        //do nothing. it means that it is listening to its own voice
+      } ,
+
+      '*keyword': function(command) {
+        console.log("testing");
+         annyang.pause();
+         annyang.abort();
+
+        console.log("other command");
+        //if(!window.speechSynthesis.speaking) {
+          console.log(command);
+          //pause
+          //annyang = false;
+          //pause();
+          responsiveVoice.speak('Sorry. I did not understand what you meant by ' + command, 'UK English Male');
+          sleep(15000);
+          //responsiveVoice.speak(command,'UK English Male');
+          annyang.resume();
+          annyang.init();
+
+
+          //implement question-answering NLP here
+          //also use Parse for backend so I can store all the data and learn on that data
+          //how do you make it NOT listen to itself? disable annyang while speaking? how do you know when it's speaking? how do you turn off annyang?
+        //}
       }
 
     };
@@ -229,4 +290,8 @@
 
     // Start listening. You can call this here, or attach this call to an event, button, etc.
     annyang.start();
+    annyang.debug();
   }
+
+//  });
+//};
