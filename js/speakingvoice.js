@@ -12,70 +12,70 @@
         var commands = {
           //Hello. Welcome to Lawrence's website. I am Larry Bot, Lawrence's smart personal assistant. I am still under construction, so I am afraid I won't be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.
 
-       '(Larry Bot) (set up a) meeting (with Lawrence) (on) *date (at) *time':function(date, time) {
+       '(Larry) (Bot) (set up a) meeting (with Lawrence) (on) *date (at) *time':function(date, time) {
         //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
         responsiveVoice.speak("Awesome! I am scheduling a meeting for " + date + time + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!",'UK English Male');
         window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + date + " at " + time + "?");
       },
 
-      '(Larry Bot) (set up a) meeting with Lawrence on *date at *time *ampm':function(date, time, ampm) {
+      '(Larry) (Bot) (set up a) meeting with Lawrence on *date at *time *ampm':function(date, time, ampm) {
         //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
         responsiveVoice.speak("Awesome! I am scheduling a meeting for " + date + time + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!",'UK English Male');
         window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + date + " at " + time + "?");
       },
 
       
-      '(Larry Bot) (set up a) meeting (with Lawrence) on *date at *time':function(date, time) {
+      '(Larry) (Bot) (set up a) meeting (with Lawrence) on *date at *time':function(date, time) {
         //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
         responsiveVoice.speak("Awesome! I am scheduling a meeting for " + date + time + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!",'UK English Male');
         window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + date + " at " + time + "?");
       },
 
-      '(Larry Bot) (set up a) meeting with Lawrence *dateTime':function(dateTime) {
+      '(Larry) (Bot) (set up a) meeting with Lawrence *dateTime':function(dateTime) {
         //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
         responsiveVoice.speak("Awesome! I am scheduling a meeting for " + dateTime + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!",'UK English Male');
         window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + dateTime + "?");
       },
 
 
-      '(Larry Bot) when is Lawrence free':function() {
+      '(Larry) (Bot) when is Lawrence free':function() {
         responsiveVoice.speak("I'm checking his schedule. Hold on... On Mondays, Wednesdays and Fridays, he is usually free from 10 am to 11 am, from noon to 12 45 or anytime after 2 15 pm. On Tuesdays and Thursdays, he is free from 11 40 am to 1 pm or anytime after 2 10 pm. He is usually free during weekends as well. Let me know if you want to set up a meeting and the date and time of the meeting. You can, for example, say 'Larry Bot, set up a meeting with Lawrence on Monday at 6 pm'",'UK English Male');
       },
 
-      '(Larry Bot) when is Lawrence available':function() {
+      '(Larry) (Bot) when is Lawrence available':function() {
         responsiveVoice.speak("I'm checking his schedule. Hold on... On Mondays, Wednesdays and Fridays, he is usually free from 10 am to 11 am, from noon to 12 45 or anytime after 2 15 pm. On Tuesdays and Thursdays, he is free from 11 40 am to 1 pm or anytime after 2 10 pm. He is usually free during weekends as well. Let me know if you want to set up a meeting and the date and time of the meeting. You can, for example, say 'Larry Bot, set up a meeting with Lawrence on Monday at 6 pm'",'UK English Male');
       },
 
-      "(Larry Bot) what is Lawrence's schedule":function() {
+      "(Larry) (Bot) what is Lawrence's schedule":function() {
         responsiveVoice.speak("I'm checking his schedule. Hold on... On Mondays, Wednesdays and Fridays, he is usually free from 10 am to 11 am, from noon to 12 45 or anytime after 2 15 pm. On Tuesdays and Thursdays, he is free from 11 40 am to 1 pm or anytime after 2 10 pm. He is usually free during weekends as well. Let me know if you want to set up a meeting and the date and time of the meeting. You can, for example, say 'Larry Bot, set up a meeting with Lawrence on Monday at 6 pm'",'UK English Male');
       },
 
-      '(Larry Bot) Go to who I am':function() {
+      '(Larry) (Bot) Go to who I am':function() {
         responsiveVoice.speak("Sure! Here is a description about Lawrence. Let me know if you want more information.",'UK English Male');
         window.location.href = 'http://lawrencemurata.com/#one';
       },
 
-      '(Larry Bot) Go to intro':function() {
+      '(Larry) (Bot) Go to intro':function() {
         responsiveVoice.speak("Okay! Here is the intro. Let me know if you want more information.",'UK English Male');
         window.location.href = 'http://lawrencemurata.com/#cta';
       },
 
-      '(Larry Bot) Go to what I do':function() {
+      '(Larry) (Bot) Go to what I do':function() {
         responsiveVoice.speak("Great! Here is what Lawrence does. Let me know if you want more information.",'UK English Male');
         window.location.href = 'http://lawrencemurata.com/#two';      
       },
 
-      '(Larry Bot) Go to projects':function() {
+      '(Larry) (Bot) Go to projects':function() {
         responsiveVoice.speak("Awesome! Here are Lawrence's projects. Check them out. Let me know if you want more information.",'UK English Male');
         window.location.href = 'http://lawrencemurata.com/#work';
       },
 
-      '(Larry Bot) Go to contact':function() {
+      '(Larry) (Bot) Go to contact':function() {
         responsiveVoice.speak("Of course! Feel free to reach out to Lawrence. You can also ask me to email or call him. If you need, I can help you find a time to meet. Let me know if you want more information.",'UK English Male');
         window.location.href = 'http://lawrencemurata.com/#contact';      
       },
 
-      '(Larry Bot) Go to press':function() {
+      '(Larry) (Bot) Go to press':function() {
         responsiveVoice.speak("Cool! Here is the press section. Let me know if you want more information.",'UK English Male');
         window.location.href = 'http://lawrencemurata.com/#press';      
       },
