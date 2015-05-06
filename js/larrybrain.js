@@ -252,7 +252,16 @@
 
       'Sorry I did not understand (what you meant by) *command': function(command) {
         //do nothing. it means that it is listening to its own voice
-      } /*,
+      },
+
+      'Larry (Bot) *keyword':function(command) {
+          responsiveVoice.speak('Sorry. I did not understand what you meant by ' + command, 'UK English Male');
+         //implement question-answering NLP here
+          //also use Parse for backend so I can store all the data and learn on that data
+          //temporary solution for "listening to himself" bug
+      }
+
+       /*,
 
       '*keyword': function(command) {
         console.log("testing");
