@@ -1,3 +1,5 @@
+//Hi! This is Larry Bot's brain
+
     console.log("annyang setup");
 
     function sleep(miliseconds) {
@@ -403,40 +405,11 @@
               anyCommand(command);
          }
 
-         /*,
-
-        '*keyword': function(command) {
-          console.log("testing");
-           annyang.pause();
-           annyang.abort();
-
-          console.log("other command");
-          //if(!window.speechSynthesis.speaking) {
-            console.log(command);
-            //pause
-            //annyang = false;
-            //pause();
-            responsiveVoice.speak('Sorry. I did not understand what you meant by ' + command, 'UK English Male');
-            sleep(15000);
-            //responsiveVoice.speak(command,'UK English Male');
-            annyang.resume();
-            annyang.init();
-
-
-            //implement question-answering NLP here
-            //also use Parse for backend so I can store all the data and learn on that data
-            //how do you make it NOT listen to itself? disable annyang while speaking? how do you know when it's speaking? how do you turn off annyang?
-          //}
-        }*/
-
       };
 
 
       annyang.addCallback('init', function() {
-        console.log("init");
-
-        //just copy commands from above. keep this updated!!
-        
+        console.log("init");        
         annyang.init(commands, false);
       });
 
@@ -447,6 +420,3 @@
       annyang.start();
       annyang.debug();
     }
-
-  //  });
-  //};
