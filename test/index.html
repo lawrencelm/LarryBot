@@ -1,0 +1,18 @@
+
+
+<!-- language: lang-html -->
+    <script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
+
+    <script src="http://code.jquery.com/jquery-git2.js"></script>
+
+    <textarea id="text" cols="45" rows="3">Hello world this is some text to say</textarea>
+
+    <select id="voiceselection"></select>
+
+    <input onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" type="button" value="Play" />
+    <br>
+    <button id="isPlaying">Playing:</button>
+    <p id="r">?</p>
+    <script src="speakingvoice.js"></script>
+
+<!-- end snippet -->

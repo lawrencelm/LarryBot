@@ -35,6 +35,28 @@
     // Let's define our first command. First the text we expect, and then the function it should call
         var commands = {
           //Hello. Welcome to Lawrence's website. I am Larry Bot, Lawrence's smart personal assistant. I am still under construction, so I am afraid I won't be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.
+          '*anything': function(command) {
+            annyang.pause();
+            var speechLog = "I'm sorry. I do not understand what you meant by " + command;
+            responsiveVoice.speak(speechLog, 'UK English Male');
+            console.log(speechLog);
+            /*sleep(4000);
+            annyang.resume();*/
+            if(window.speechSynthesis.speaking != true) {
+              console.log(window.speechSynthesis.speaking)
+            }
+            //sleep(15000);
+            var tpw = 1000; //average time to say a single word
+            var fwt = 6000; //how long it usually takes to say the first word (it's longer than the following words)
+            var pp = (command.match(/./g) || []).length
+            var cp = (command.match(/,/g) || []).length
+
+            var nw = speechLog.split(' ').length; //number of words said
+
+            var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
+            window.setTimeout("annyang.resume()", timing); //time it according to size of string
+
+          },
 
        '(Larry) (Bot) (set up a) meeting (with Lawrence) (on) *date (at) *time':function(date, time) {
         //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
@@ -60,7 +82,6 @@
         responsiveVoice.speak("Awesome! I am scheduling a meeting for " + dateTime + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!",'UK English Male');
         window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + dateTime + "?");
       },
-
 
       '(Larry) (Bot) when is Lawrence free':function() {
         responsiveVoice.speak("I'm checking his schedule. Hold on... On Mondays, Wednesdays and Fridays, he is usually free from 10 am to 11 am, from noon to 12 45 or anytime after 2 15 pm. On Tuesdays and Thursdays, he is free from 11 40 am to 1 pm or anytime after 2 10 pm. He is usually free during weekends as well. Let me know if you want to set up a meeting and the date and time of the meeting. You can, for example, say 'Larry Bot, set up a meeting with Lawrence on Monday at 6 pm'",'UK English Male');

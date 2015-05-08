@@ -33,11 +33,11 @@
 		<script src="js/init.js"></script>
 
 		<script src="annyang/annyang.js"></script>
+
         <!--<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/annyang.min.js"></script>-->
 
 
 	<script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
-	<script src="js/larrybrain.js"></script>
 
 	    <!--<script src="app.js"></script>-->
        <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -53,8 +53,13 @@
 </head>
 
 <body>
-        
-        
+        <!--<script>
+      $('#isPlaying').on('click', function() {
+        $('#r').text(window.speechSynthesis.speaking)
+      })
+        </script>
+            <button id="isPlaying">Playing:</button>
+            <p id="r">?</p>-->
         <script src="js/ebayAPIHandler.js"></script>
         <script src="js/flickrAPIHandler.js"></script>
         <script src="js/spotifyAPIHandler.js"></script>
@@ -65,7 +70,16 @@
         <script type="text/javascript">
             var easter_egg = new Konami(function() { window.open("https://www.google.com/search?q=atari+breakout&espv=210&es_sm=91&source=lnms&tbm=isch&sa=X&ei=SvUsU4WKK47ooASm7oHACw&sqi=2&ved=0CAcQ_AUoAQ&biw=1161&bih=537#imgdii=_")});
         </script>
-			
+
+	<!--		    <textarea id="text" cols="45" rows="3">Hello world this is some text to say</textarea>
+
+    <select id="voiceselection"></select>
+
+    <input onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" type="button" value="Play" />
+    <br>
+    <button id="isPlaying">Playing:</button>
+    <p id="r">?</p>
+    <script src="speakingvoice.js"></script>-->
 
         <section id="cta" class="main style1">
         <div class="animated-bg">
@@ -140,6 +154,8 @@
     	<script src="js/rAF.js"></script>
 		<script src="js/EasePack.min.js"></script>
 		<script src="js/animated-background.js"></script>
+            <script src="js/larrybrain.js"></script>
+
 	</body>
 	
 	<!-- Google Analytics-->
