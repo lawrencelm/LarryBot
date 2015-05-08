@@ -167,6 +167,14 @@
               findAvailability();
             },
 
+            "(Larry) (Bot) when's Lawrence available":function() {
+              findAvailability();
+            },
+
+            "(Larry) (Bot) when's Lawrence free":function() {
+              findAvailability();
+            },
+
             '(Larry) (Bot) when is Lawrence available':function() {
               findAvailability();
             },
@@ -180,28 +188,23 @@
             },
 
             '(Larry) (Bot) Go to intro':function() {
-              responsiveVoice.speak("Okay! Here is the intro. Let me know if you want more information.",'UK English Male');
-              window.location.href = 'http://lawrencemurata.com/#cta';
+              navigateWebsite('cta', "Okay! Here is the intro. Let me know if you want more information.");
             },
 
             '(Larry) (Bot) Go to what I do':function() {
-              responsiveVoice.speak("Great! Here is what Lawrence does. Let me know if you want more information.",'UK English Male');
-              window.location.href = 'http://lawrencemurata.com/#two';      
+              navigateWebsite('two', "Great! Here is what Lawrence does. Let me know if you want more information.");
             },
 
             '(Larry) (Bot) Go to projects':function() {
-              responsiveVoice.speak("Awesome! Here are Lawrence's projects. Check them out. Let me know if you want more information.",'UK English Male');
-              window.location.href = 'http://lawrencemurata.com/#work';
+              navigateWebsite('work', "Awesome! Here are Lawrence's projects. Check them out. Let me know if you want more information.");
             },
 
             '(Larry) (Bot) Go to contact':function() {
-              responsiveVoice.speak("Of course! Feel free to reach out to Lawrence. You can also ask me to email or call him. If you need, I can help you find a time to meet. Let me know if you want more information.",'UK English Male');
-              window.location.href = 'http://lawrencemurata.com/#contact';      
+              navigateWebsite('contact', "Of course! Feel free to reach out to Lawrence. You can also ask me to email or call him. If you need, I can help you find a time to meet. Let me know if you want more information.");
             },
 
             '(Larry) (Bot) Go to press':function() {
-              responsiveVoice.speak("Cool! Here is the press section. Let me know if you want more information.",'UK English Male');
-              window.location.href = 'http://lawrencemurata.com/#press';      
+              navigateWebsite('press', "Cool! Here is the press section. Let me know if you want more information.");
             },
 
             'Add Lawrence on *name':function(keywordString) {
