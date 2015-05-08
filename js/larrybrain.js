@@ -20,11 +20,11 @@
 
               console.log(pp + ' periods, ' + cp + ' commas ' + ', ' + nw + ' words and ' + total_tpw + ' total tpw');
 
-              var extra = 0; //extra milliseconds required by word
+              var extra = 200; //extra milliseconds required by word
                               //used to add extra time for particularly long sentences that tend to be underestimated by my formula
 
-              if(total_twp >= 100) {
-                extra = 200;
+              if(total_tpw >= 100) {
+                total_tpw += extra;
               }
 
               var timing = fwt + (tpw)*(total_tpw); //estimated time it will take for larry bot to say something (in milliseconds)
@@ -217,9 +217,26 @@
     function joke(query) {
               annyang.pause();
 
-              var speechLog = query;
+              var speechLog = "Whats the object-oriented way to become wealthy? Inheritance";
 
-              responsiveVoice.speak(speechLog,'UK English Male');
+              var randomnumber = Math.floor(Math.random()*11); //random number from 0 to 10
+              //going to use this to implement multiple jokes. all CS jokes
+              responsiveVoice.speak("Whats the object-oriented way to become wealthy?",'UK English Male');
+              responsiveVoice.speak("Inheritance",'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+    }
+
+    function hi() {
+              annyang.pause();
+
+              var speechLog = 'Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.';
+
+              responsiveVoice.speak(speechLog, 'UK English Male');
 
               console.log(speechLog);
 
@@ -333,73 +350,60 @@
             },
 
             'Email Lawrence':function() {
-              responsiveVoice.speak("Perfect! I have just set up the email message for you. Depending on the browser you are using, you might need to allow pop-ups.",'UK English Male');
-              window.open('mailto:lawrence@lawrencemurata.com?subject=Hi&body=Write your email here! - Larry Bot');
+              simpleOpen("Perfect! I have just set up the email message for you. Depending on the browser you are using, you might need to allow pop-ups.", 'mailto:lawrence@lawrencemurata.com?subject=Hi&body=Write your email here! - Larry Bot');
             },
 
             'Call Lawrence':function() {
-              responsiveVoice.speak("Great! I am calling Lawrence for you.",'UK English Male');
-              window.open('tel:6503903867');
+              simpleOpen("Great! I am calling Lawrence for you.", 'tel:6503903867');
             },
 
-            'Give me Lawrence\'s resume':function() {
-              responsiveVoice.speak("Here is his resume! Let me know if you have any questions.",'UK English Male');
-              window.open('http://resume.lawrencemurata.com/');
+            "Give me Lawrence's resume":function() {
+              simpleOpen("Here is his resume! Let me know if you have any questions.", 'http://resume.lawrencemurata.com/');
             },
 
             '(Larry) (Bot) tell me a joke': function() {
-          var randomnumber = Math.floor(Math.random()*11); //random number from 0 to 10
-          //going to use this to implement multiple jokes. all CS jokes
-          responsiveVoice.speak("Whats the object-oriented way to become wealthy?",'UK English Male');
-          responsiveVoice.speak("Inheritance",'UK English Male');
-        },
+              joke();
+            },
 
-        'Larry Bot': function() {
-          responsiveVoice.speak("Whats the object-oriented way to become wealthy?",'UK English Male');
-          responsiveVoice.speak("Inheritance",'UK English Male');
-        },
+          'Larry Bot': function() {
+            hi();
+          },
 
         '(Larry Bot) What is OneTune': function() {
-          responsiveVoice.speak("OneTune is the world's free, open music platform. It lets you listen to and collect millions of organized songs for free, no matter where you live or what language you speak. Go to OneTune.fm to have access to over 5 million songs, with zero ads, 100% free.",'UK English Male');
+          simple("OneTune is the world's free, open music platform. It lets you listen to and collect millions of organized songs for free, no matter where you live or what language you speak. Go to OneTune.fm to have access to over 5 million songs, with zero ads, 100% free.");
         },
 
         '(Larry Bot) What is SmartBox': function() {
-          responsiveVoice.speak("SmartBox is, like me, a web-based personal assistant. It recognizes what the you need and connects you to the right service. It can process language, recognize voice and measure your brain activity (through our hardware BrainBox, which measures your body’s resistance) to understand your needs. Hungry? Ask SmartBox to bring you food. Stressed? When BrainBox measures high levels of stress, it plays calm songs. (arduino, javascript, node.js, several APIs)",'UK English Male');
+          simple("SmartBox is, like me, a web-based personal assistant. It recognizes what the you need and connects you to the right service. It can process language, recognize voice and measure your brain activity (through our hardware BrainBox, which measures your body’s resistance) to understand your needs. Hungry? Ask SmartBox to bring you food. Stressed? When BrainBox measures high levels of stress, it plays calm songs. (arduino, javascript, node.js, several APIs)");
         },
 
         'Hello (Lawrence)': function() {
-          console.log('show tps report')
-          responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+          hi();
         },
 
         '(Larry Bot) Hello (Larry Bot)': function() {
-          console.log('show tps report')
-          responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+          hi();
         },
 
         '(Larry Bot) Hi (Larry Bot)': function() {
-          console.log('show tps report')
-          responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+          hi();
         },
 
         'Hello (Larry)': function() {
-          console.log('show tps report')
-          responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+          hi();
         },
 
 
         'Hi (Larry)': function() {
-          console.log('show tps report')
-          responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+          hi();
         },
 
         'Hi (Lawrence)': function() {
-          console.log('show tps report')
-          responsiveVoice.speak('Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.','UK English Male');
+          hi();
         },
 
         'Steve Jobs (Steve Jobs)': function() {
-          responsiveVoice.speak("Did you mean God?",'UK English Male');
+          simple("Did you mean God?");
         },
 
         'Sorry I did not understand (what you meant by) *command': function(command) {
@@ -407,7 +411,7 @@
         },
 
         'Larry (Bot) *keyword':function(command) {
-          responsiveVoice.speak('Sorry. I did not understand what you meant by ' + command, 'UK English Male');
+            anyCommand(command);
            //implement question-answering NLP here
             //also use Parse for backend so I can store all the data and learn on that data
             //temporary solution for "listening to himself" bug
