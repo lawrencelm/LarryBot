@@ -7,16 +7,21 @@
              }
     }
 
-    var tpw = 500; //average time to say a single word
+    var tpw = 470; //average time to say a single word
     var fwt = 6000; //how long it usually takes to say the first word (it's longer than the following words)
 
     function getTiming(speechLog) {
               var pp = 0;//(speechLog.match(new RegExp(". ", "g")) || []).length;
-              var cp = (speechLog.match(/,/g) || []).length
+              var cp = (speechLog.match(/,/g) || []).length;
 
               var nw = speechLog.split(' ').length; //number of words said
+              var ec = 2*((speechLog.match(/\*/g) || []).length); //dealing with edge case when person says a swear word.
+                                                    //the edge case with swear words.: voice-to-text gives string 'f***k',
+                                                    //but the machine will read 'F asterisk asterisk asterisk K', which makes
+                                                    //the timing go off
 
-              var total_tpw = nw + pp + cp - 1; //total number of pauses or words
+
+              var total_tpw = nw + pp + cp + ec - 1; //total number of pauses or words
 
               console.log(pp + ' periods, ' + cp + ' commas ' + ', ' + nw + ' words and ' + total_tpw + ' total tpw');
 
