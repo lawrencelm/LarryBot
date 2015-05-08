@@ -132,7 +132,6 @@
     }
 
     function navigateWebsite(section, sentence) {
-              //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
               annyang.pause();
 
               var speechLog = sentence;
@@ -147,6 +146,87 @@
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
     }
 
+    function socialMedia(keywordString, followingAdding) {
+              annyang.pause();
+
+              var speechLog = followingAdding + " Lawrence on " + keywordString;
+
+              responsiveVoice.speak(speechLog,'UK English Male');
+              var user = '';
+
+              if(keywordString.toLowerCase() == 'facebook') {
+                user = 'lawrence.murata';
+              } else if (keywordString.toLowerCase() == 'instagram') {
+                user = 'lawrence_lm'
+              } else if (keywordString.toLowerCase() == 'linkedin' || keywordString.toLowerCase() == 'linked in') {
+                user = 'in/lawrencelm'
+              } else if (keywordString.toLowerCase() == 'medium') {
+                user = '@lawlm'
+              } else if (keywordString.toLowerCase() == 'twitter') {
+                user = 'lawlm'
+              } else if (keywordString.toLowerCase() == 'onetune') {
+                window.open('http://onetune.fm/u/lawrence.murata/p/lawrences-playlist');
+                return;
+              } else if (keywordString.toLowerCase() == 'github') {
+                user = 'lawrencelm'
+              } else {
+                window.open('http://onetune.fm/u/lawrence.murata/p/lawrences-playlist');
+                return;
+              }
+
+              window.open('http://' + keywordString + '.com/' + user);
+
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+    }
+
+    function simple(query) {
+              annyang.pause();
+
+              var speechLog = query;
+
+              responsiveVoice.speak(speechLog,'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+    }
+
+    function simpleOpen(query, open) {
+              annyang.pause();
+
+              var speechLog = query;
+
+              responsiveVoice.speak(speechLog,'UK English Male');
+              window.open(open);
+
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+    }
+
+    function joke(query) {
+              annyang.pause();
+
+              var speechLog = query;
+
+              responsiveVoice.speak(speechLog,'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+    }
 
     if (annyang) {
       console.log("there is annyang");
@@ -225,79 +305,31 @@
             },
 
             'Add Lawrence on *name':function(keywordString) {
-              responsiveVoice.speak("Adding Lawrence on " + keywordString,'UK English Male');
-              var user = '';
-
-              if(keywordString.toLowerCase() == 'facebook') {
-                user = 'lawrence.murata';
-              } else if (keywordString.toLowerCase() == 'instagram') {
-                user = 'lawrence_lm'
-              } else if (keywordString.toLowerCase() == 'linkedin' || keywordString.toLowerCase() == 'linked in') {
-                user = 'in/lawrencelm'
-              } else if (keywordString.toLowerCase() == 'medium') {
-                user = '@lawlm'
-              } else if (keywordString.toLowerCase() == 'twitter') {
-                user = 'lawlm'
-              } else if (keywordString.toLowerCase() == 'onetune') {
-                window.open('http://onetune.fm/u/lawrence.murata/p/lawrences-playlist');
-                return;
-              } else if (keywordString.toLowerCase() == 'github') {
-                user = 'lawrencelm'
-              } else {
-                window.open('http://onetune.fm/u/lawrence.murata/p/lawrences-playlist');
-                return;
-              }
-
-              window.open('http://' + keywordString + '.com/' + user);
-
+              socialMedia(keywordString, "Adding");
             },
 
             'Follow Lawrence on *name':function(keywordString) {
-              responsiveVoice.speak("Following Lawrence on " + keywordString,'UK English Male');
-              var user = '';
-
-              if(keywordString.toLowerCase() == 'facebook') {
-                user = 'lawrence.murata';
-              } else if (keywordString.toLowerCase() == 'instagram') {
-                user = 'lawrence_lm'
-              } else if (keywordString.toLowerCase() == 'linkedin' || keywordString.toLowerCase() == 'linked in') {
-                user = 'in/lawrencelm'
-              } else if (keywordString.toLowerCase() == 'medium') {
-                user = '@lawlm'
-              } else if (keywordString.toLowerCase() == 'twitter') {
-                user = 'lawlm'
-              } else if (keywordString.toLowerCase() == 'onetune') {
-                window.open('http://onetune.fm/u/lawrence.murata/p/lawrences-playlist');
-                return;
-              } else if (keywordString.toLowerCase() == 'github') {
-                user = 'lawrencelm'
-              } else {
-                window.open('http://onetune.fm/u/lawrence.murata/p/lawrences-playlist');
-                return;
-              }
-
-              window.open('http://' + keywordString + '.com/' + user);
-
+              socialMedia(keywordString, "Following");
             },
 
             '42':function() {
-              responsiveVoice.speak("42 is the Answer to the Ultimate Question of Life, the Universe and Everything.",'UK English Male');
+                simple("42 is the Answer to the Ultimate Question of Life, the Universe and Everything.");
             },
 
             'fuck (you)':function() {
-              responsiveVoice.speak("watch your language!",'UK English Male');
+              simple("watch your language!");
             },
 
             'What is (Nano-engineered) Chips (for Wearables)':function() {
-              responsiveVoice.speak("Developed flexible chips using polyamide substrates (for flexible boards) with metal circuits (E-Beam Evaporation) in the Stanford Nanotechnology Laboratory, experimenting and researching different designs, methods and materials to study and develop flexible chips for wearable computers. In addition to optimizing results for the chips, this independent project also resulted in low-cost products for wearables.",'UK English Male');
+              simple("Developed flexible chips using polyamide substrates (for flexible boards) with metal circuits (E-Beam Evaporation) in the Stanford Nanotechnology Laboratory, experimenting and researching different designs, methods and materials to study and develop flexible chips for wearable computers. In addition to optimizing results for the chips, this independent project also resulted in low-cost products for wearables.");
             },
 
             'How old is Lawrence?':function() {
-              responsiveVoice.speak("Lawrence is 20 years old",'UK English Male');
+              simple("Lawrence is 20 years old");
             },
 
             'How are you (doing) (today)?':function() {
-              responsiveVoice.speak("I am doing well. Thanks for asking!",'UK English Male');
+              simple("I am doing well. Thanks for asking!");
             },
 
             'Email Lawrence':function() {
