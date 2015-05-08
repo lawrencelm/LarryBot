@@ -20,8 +20,8 @@
                 console.log(window.speechSynthesis.speaking)
               }
 
-              var pp = (command.match(/./g) || []).length
-              var cp = (command.match(/,/g) || []).length
+              var pp = (speechLog.match(/./g) || []).length
+              var cp = (speechLog.match(/,/g) || []).length
 
               var nw = speechLog.split(' ').length; //number of words said
 
@@ -39,8 +39,8 @@
 
               console.log(speechLog);
 
-              var pp = (command.match(/./g) || []).length
-              var cp = (command.match(/,/g) || []).length
+              var pp = (speechLog.match(/./g) || []).length
+              var cp = (speechLog.match(/,/g) || []).length
               console.log(pp + 'periods and ' + cp + ' commas');
 
               var nw = speechLog.split(' ').length; //number of words said
@@ -60,8 +60,8 @@
 
               console.log(speechLog);
 
-              var pp = (command.match(/./g) || []).length
-              var cp = (command.match(/,/g) || []).length
+              var pp = (speechLog.match(/./g) || []).length
+              var cp = (speechLog.match(/,/g) || []).length
               console.log(pp + 'periods and ' + cp + ' commas');
 
               var nw = speechLog.split(' ').length; //number of words said
@@ -80,8 +80,8 @@
 
               console.log(speechLog);
 
-              var pp = (command.match(/./g) || []).length
-              var cp = (command.match(/,/g) || []).length
+              var pp = (speechLog.match(/./g) || []).length
+              var cp = (speechLog.match(/,/g) || []).length
               console.log(pp + 'periods and ' + cp + ' commas');
 
               var nw = speechLog.split(' ').length; //number of words said
@@ -99,11 +99,12 @@
 
               console.log(speechLog);
 
-              var pp = (command.match(/./g) || []).length
-              var cp = (command.match(/,/g) || []).length
-              console.log(pp + 'periods and ' + cp + ' commas');
+              var pp = (speechLog.match(/./g) || []).length
+              var cp = (speechLog.match(/,/g) || []).length
 
               var nw = speechLog.split(' ').length; //number of words said
+              console.log(pp + 'periods, ' + cp + ' commas ' + ' and ' + nw + ' words');
+
 
               var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
@@ -120,13 +121,23 @@
 
               console.log(speechLog);
 
-              var pp = (command.match(/./g) || []).length
-              var cp = (command.match(/,/g) || []).length
-              console.log(pp + 'periods and ' + cp + ' commas');
+              var pp = (speechLog.match(/./g) || []).length
+              var cp = (speechLog.match(/,/g) || []).length
 
               var nw = speechLog.split(' ').length; //number of words said
 
-              var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
+              var total_tpw = nw + pp + cp - 1; //total number of pauses or words
+
+              console.log(pp + 'periods, ' + cp + ' commas ' + ', ' + nw + ' words and ' + total_tpw + ' total tpw');
+
+              var extra = 0; //extra milliseconds required by word
+                              //used to add extra time for particularly long sentences that tend to be underestimated by my formula
+
+              if(total_twp >= 50) {
+                extra = 300;
+              }
+
+              var timing = fwt + (tpw)*(total_tpw); //estimated time it will take for larry bot to say something (in milliseconds)
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
     }
 
