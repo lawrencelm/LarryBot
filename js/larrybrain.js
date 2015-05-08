@@ -8,7 +8,72 @@
 
            while (currentTime + miliseconds >= new Date().getTime()) {
            }
-       }
+  }
+
+  var tpw = 1000; //average time to say a single word
+  var fwt = 6000; //how long it usually takes to say the first word (it's longer than the following words)
+
+  function anyCommand(command) {
+            annyang.pause();
+            var speechLog = "I'm sorry. I do not understand what you meant by " + command;
+            responsiveVoice.speak(speechLog, 'UK English Male');
+            console.log(speechLog);
+            /*sleep(4000);
+            annyang.resume();*/
+            if(window.speechSynthesis.speaking != true) {
+              console.log(window.speechSynthesis.speaking)
+            }
+            //sleep(15000);
+
+            var pp = (command.match(/./g) || []).length
+            var cp = (command.match(/,/g) || []).length
+
+            var nw = speechLog.split(' ').length; //number of words said
+
+            var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
+            window.setTimeout("annyang.resume()", timing); //time it according to size of string
+  }
+
+  function setUpMeeting1(date, time) {
+            //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
+            annyang.pause();
+
+            var speechLog = "Awesome! I am scheduling a meeting for " + date + time + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!";
+            responsiveVoice.speak(speechLog, 'UK English Male');
+            window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + date + " at " + time + "?");
+
+            console.log(speechLog);
+
+            var pp = (command.match(/./g) || []).length
+            var cp = (command.match(/,/g) || []).length
+            console.log(pp + 'periods and ' + cp + ' commas');
+
+            var nw = speechLog.split(' ').length; //number of words said
+
+            var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
+            window.setTimeout("annyang.resume()", timing); //time it according to size of string
+  }
+
+
+  function setUpMeeting2(date, time, ampm) {
+            //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
+            annyang.pause();
+
+            var speechLog = "Awesome! I am scheduling a meeting for " + date + " " + time + " " + ampm + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!";
+            responsiveVoice.speak(speechLog, 'UK English Male');
+            window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + date + " at " + time + " " + ampm + "?");
+
+            console.log(speechLog);
+
+            var pp = (command.match(/./g) || []).length
+            var cp = (command.match(/,/g) || []).length
+            console.log(pp + 'periods and ' + cp + ' commas');
+
+            var nw = speechLog.split(' ').length; //number of words said
+
+            var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
+            window.setTimeout("annyang.resume()", timing); //time it according to size of string
+  }
 
 
  /* function pause() {
@@ -36,45 +101,20 @@
         var commands = {
           //Hello. Welcome to Lawrence's website. I am Larry Bot, Lawrence's smart personal assistant. I am still under construction, so I am afraid I won't be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.
           '*anything': function(command) {
-            annyang.pause();
-            var speechLog = "I'm sorry. I do not understand what you meant by " + command;
-            responsiveVoice.speak(speechLog, 'UK English Male');
-            console.log(speechLog);
-            /*sleep(4000);
-            annyang.resume();*/
-            if(window.speechSynthesis.speaking != true) {
-              console.log(window.speechSynthesis.speaking)
-            }
-            //sleep(15000);
-            var tpw = 1000; //average time to say a single word
-            var fwt = 6000; //how long it usually takes to say the first word (it's longer than the following words)
-            var pp = (command.match(/./g) || []).length
-            var cp = (command.match(/,/g) || []).length
-
-            var nw = speechLog.split(' ').length; //number of words said
-
-            var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
-            window.setTimeout("annyang.resume()", timing); //time it according to size of string
-
+            anyCommand(command);
           },
 
        '(Larry) (Bot) (set up a) meeting (with Lawrence) (on) *date (at) *time':function(date, time) {
-        //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
-        responsiveVoice.speak("Awesome! I am scheduling a meeting for " + date + time + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!",'UK English Male');
-        window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + date + " at " + time + "?");
+          setUpMeeting1(date, time);
       },
 
       '(Larry) (Bot) (set up a) meeting with Lawrence on *date at *time *ampm':function(date, time, ampm) {
-        //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
-        responsiveVoice.speak("Awesome! I am scheduling a meeting for " + date + time + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!",'UK English Male');
-        window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + date + " at " + time + "?");
+          setUpMeeting2(date, time, ampm);
       },
 
       
       '(Larry) (Bot) (set up a) meeting (with Lawrence) on *date at *time':function(date, time) {
-        //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
-        responsiveVoice.speak("Awesome! I am scheduling a meeting for " + date + time + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!",'UK English Male');
-        window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + date + " at " + time + "?");
+          setUpMeeting1(date, time
       },
 
       '(Larry) (Bot) (set up a) meeting with Lawrence *dateTime':function(dateTime) {
