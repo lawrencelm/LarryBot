@@ -42,13 +42,7 @@
                 console.log(window.speechSynthesis.speaking)
               }
 
-              var pp = 0;//(speechLog.match(/./g) || []).length
-              var cp = (speechLog.match(/,/g) || []).length
-
-              var nw = speechLog.split(' ').length; //number of words said
-              console.log(pp + 'periods, ' + cp + ' commas ' + ' and ' + nw + ' words');
-
-              var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
+              var timing = getTiming(speechLog);
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
     }
 
@@ -62,13 +56,8 @@
 
               console.log(speechLog);
 
-              var pp = 0;//(speechLog.match(/./g) || []).length
-              var cp = (speechLog.match(/,/g) || []).length
-              console.log(pp + 'periods and ' + cp + ' commas');
+              var timing = getTiming(speechLog);
 
-              var nw = speechLog.split(' ').length; //number of words said
-
-              var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
     }
 
@@ -83,13 +72,8 @@
 
               console.log(speechLog);
 
-              var pp = 0;//(speechLog.match(/./g) || []).length
-              var cp = (speechLog.match(/,/g) || []).length
-              console.log(pp + 'periods and ' + cp + ' commas');
+              var timing = getTiming(speechLog);
 
-              var nw = speechLog.split(' ').length; //number of words said
-
-              var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
     }
 
@@ -103,13 +87,8 @@
 
               console.log(speechLog);
 
-              var pp = 0;//(speechLog.match(/./g) || []).length
-              var cp = (speechLog.match(/,/g) || []).length
-              console.log(pp + 'periods and ' + cp + ' commas');
+              var timing = getTiming(speechLog);
 
-              var nw = speechLog.split(' ').length; //number of words said
-
-              var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
     }
 
@@ -122,14 +101,8 @@
 
               console.log(speechLog);
 
-              var pp = 0;//(speechLog.match(new RegExp(".", "g")) || []).length;
-              var cp = (speechLog.match(/,/g) || []).length;
+              var timing = getTiming(speechLog);
 
-              var nw = speechLog.split(' ').length; //number of words said
-              console.log(pp + ' periods, ' + cp + ' commas ' + ' and ' + nw + ' words');
-
-
-              var timing = fwt + (tpw)*(nw + pp + cp - 1); //estimated time it will take for larry bot to say something (in milliseconds)
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
     }
 
