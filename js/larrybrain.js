@@ -7,7 +7,7 @@
              }
     }
 
-    var tpw = 1000; //average time to say a single word
+    var tpw = 500; //average time to say a single word
     var fwt = 6000; //how long it usually takes to say the first word (it's longer than the following words)
 
     function getTiming(speechLog) {
@@ -20,14 +20,16 @@
 
               console.log(pp + ' periods, ' + cp + ' commas ' + ', ' + nw + ' words and ' + total_tpw + ' total tpw');
 
-              var extra = 200; //extra milliseconds required by word
+            //  var extra = 0; //extra milliseconds required by word
                               //used to add extra time for particularly long sentences that tend to be underestimated by my formula
 
-              if(total_tpw >= 100) {
-                total_tpw += extra;
-              }
+            //  if(total_tpw >= 100) {
+            //    extra = 200;
+            //  }
 
-              var timing = fwt + (tpw)*(total_tpw); //estimated time it will take for larry bot to say something (in milliseconds)
+              var timing = fwt + (tpw /*+ extra*/)*(total_tpw); //estimated time it will take for larry bot to say something (in milliseconds)
+              console.log("timing is " + timing);
+              return timing;
     }
 
     function anyCommand(command) {
@@ -183,6 +185,8 @@
 
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
     }
+
+    var hello = 'Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.';
 
     function simple(query) {
               annyang.pause();
