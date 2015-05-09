@@ -40,14 +40,40 @@
 
     function expressEmotions() {
       if(howImFeeling < 0) {
-        bodyStress = 0;
+        //4, 3, 2, 1, 0
+        //-0.2, -0.4, -0.6, -0.8, -1
+        if(howImFeeling > -0.2) {
+          bodyStress = 4;
+        } else if(howImFeeling > -0.4) {
+          bodyStress = 3;
+        } else if(howImFeeling > -0.6) {
+          bodyStress = 2;
+        } else if(howImFeeling > -0.8) {
+          bodyStress = 1;
+        } else {
+          bodyStress = 0;
+        }
       }
       if(howImFeeling > 0) {
-        bodyStress = 100;
+        //6, 7, 8, 9, 10
+        //0.2, 0.4, 0.6, 0.8, 1
+        if(howImFeeling < 0.2) {
+          bodyStress = 6;
+        } else if(howImFeeling < 0.4) {
+          bodyStress = 7;
+        } else if(howImFeeling < 0.6) {
+          bodyStress = 8;
+        } else if(howImFeeling < 0.8) {
+          bodyStress = 9;
+        } else {
+          bodyStress = 10;
+        }
       }
       if(howImFeeling == 0) {
+        //neutral
         bodyStress = 5;
       }
+      console.log("computed stress = " + bodyStress);
       changeBody();
     }
 
