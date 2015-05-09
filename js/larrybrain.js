@@ -11,6 +11,19 @@
 
     var sentimentURL = "http://access.alchemyapi.com/calls/text/TextGetTextSentiment";
 
+    function emotions(text) {
+
+      var request = require('request');
+
+      var response = {
+        apikey: alchemy,//required
+        text: text, //req
+        outputMode: 'json', //optional
+      }
+
+      request.post(response);
+    }
+
     var tpw = 470; //average time to say a single word
     var fwt = 6000; //how long it usually takes to say the first word (it's longer than the following words)
 
