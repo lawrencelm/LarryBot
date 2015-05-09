@@ -65,6 +65,9 @@
               annyang.pause();
 
               var speechLog = "Awesome! I am scheduling a meeting for " + date + time + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!";
+              emotions(speechLog);
+
+
               responsiveVoice.speak(speechLog, 'UK English Male');
               window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + date + " at " + time + "?");
 
@@ -72,7 +75,7 @@
 
               var timing = getTiming(speechLog);
 
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
 
@@ -81,6 +84,8 @@
               annyang.pause();
 
               var speechLog = "Awesome! I am scheduling a meeting for " + date + " " + time + " " + ampm + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!";
+              emotions(speechLog);
+
               responsiveVoice.speak(speechLog, 'UK English Male');
               window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + date + " at " + time + " " + ampm + "?");
 
@@ -88,12 +93,13 @@
 
               var timing = getTiming(speechLog);
 
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
     function setUpMeeting3(dateTime) {
               //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
               annyang.pause();
+              emotions(speechLog);
 
               var speechLog = "Awesome! I am scheduling a meeting for " + dateTime + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!";
               responsiveVoice.speak(speechLog, 'UK English Male');
@@ -103,12 +109,13 @@
 
               var timing = getTiming(speechLog);
 
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
     function findAvailability() {
               //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
               annyang.pause();
+              emotions(speechLog);
 
               var speechLog = "I'm checking his schedule. Hold on... On Mondays, Wednesdays and Fridays, he is usually free from 10 am to 11 am, from noon to 12 45 or anytime after 2 15 pm. On Tuesdays and Thursdays, he is free from 11 40 am to 1 pm or anytime after 2 10 pm. He is usually free during weekends as well. Let me know if you want to set up a meeting and the date and time of the meeting. You can, for example, say 'Larry Bot, set up a meeting with Lawrence on Monday at 6 pm'";
               responsiveVoice.speak(speechLog, 'UK English Male');
@@ -117,11 +124,12 @@
 
               var timing = getTiming(speechLog);
 
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
     function navigateWebsite(section, sentence) {
               annyang.pause();
+              emotions(speechLog);
 
               var speechLog = sentence;
               responsiveVoice.speak(speechLog, 'UK English Male');
@@ -132,11 +140,12 @@
 
               var timing = getTiming(speechLog);
 
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
     function socialMedia(keywordString, followingAdding) {
               annyang.pause();
+              emotions(speechLog);
 
               var speechLog = followingAdding + " Lawrence on " + keywordString;
 
@@ -170,13 +179,14 @@
 
               var timing = getTiming(speechLog);
 
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
     var hello = 'Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.';
 
     function simple(query) {
               annyang.pause();
+              emotions(speechLog);
 
               var speechLog = query;
 
@@ -186,11 +196,12 @@
 
               var timing = getTiming(speechLog);
 
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
     function simpleOpen(query, open) {
               annyang.pause();
+              emotions(speechLog);
 
               var speechLog = query;
 
@@ -202,11 +213,12 @@
 
               var timing = getTiming(speechLog);
 
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
     function joke(query) {
               annyang.pause();
+              emotions(speechLog);
 
               var speechLog = "Whats the object-oriented way to become wealthy? Inheritance";
 
@@ -219,11 +231,12 @@
 
               var timing = getTiming(speechLog);
 
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
     function hi() {
               annyang.pause();
+              emotions(speechLog);
 
               var speechLog = 'Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.';
 
@@ -233,7 +246,7 @@
 
               var timing = getTiming(speechLog);
 
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
     if (annyang) {
