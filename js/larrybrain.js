@@ -1,6 +1,6 @@
 //Hi! This is Larry Bot's brain
 
-    console.log("annyang setup");
+    console.log("Welcome to Larry Brain 1.0");
 
     function sleep(miliseconds) {
              var currentTime = new Date().getTime();
@@ -346,6 +346,10 @@
             },
 
             '(Larry) (Bot) tell me a joke': function() {
+              joke();
+            },
+
+            '(Larry) (Bot) can you tell me a joke': function() {
               joke();
             },
 
