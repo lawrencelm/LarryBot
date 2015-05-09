@@ -51,11 +51,18 @@
       changeBody();
     }
 
+    function resetBody() {
+      console.log("resetting body");
+      howImFeeling = 0;
+      bodyStress = 5;
+      changeBody();
+    }
+
     function reload_js(src) {
         $('script[src="' + src + '"]').remove();
         $('<script>').attr('src', src).appendTo('body');
     }
 
     function changeBody() { //reloads the body's javascript file and removes previous one
-        reload_js("larrybody.js");
+        reload_js("js/larrybody.js");
     }

@@ -1,5 +1,5 @@
 //Hi! This is Larry Bot's brain
-    
+
     console.log("Welcome to Larry Brain 1.0");
 
     function sleep(miliseconds) {
@@ -42,6 +42,8 @@
     function anyCommand(command) {
               annyang.pause();
               var speechLog = "I'm sorry. I do not understand what you meant by " + command;
+              emotions(speechLog);
+
               responsiveVoice.speak(speechLog, 'UK English Male');
               console.log(speechLog);
 
@@ -51,7 +53,7 @@
 
               var timing = getTiming(speechLog);
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
-              emotions(speechLog);
+              resetBody();
     }
 
     function setUpMeeting1(date, time) {
