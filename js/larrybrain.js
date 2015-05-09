@@ -39,6 +39,11 @@
               return timing;
     }
 
+    function afterSpeech() { //when bot is done speaking, resume hearing and reset body
+      annyang.resume();
+      resetBody();
+    }
+
     function anyCommand(command) {
               annyang.pause();
               var speechLog = "I'm sorry. I do not understand what you meant by " + command;
@@ -52,8 +57,7 @@
               }
 
               var timing = getTiming(speechLog);
-              window.setTimeout("annyang.resume()", timing); //time it according to size of string
-              resetBody();
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
     function setUpMeeting1(date, time) {
