@@ -9,6 +9,8 @@
              }
     }
 
+    var sentimentURL = "http://access.alchemyapi.com/calls/text/TextGetTextSentiment";
+
     var tpw = 470; //average time to say a single word
     var fwt = 6000; //how long it usually takes to say the first word (it's longer than the following words)
 
