@@ -1,5 +1,5 @@
 //Hi! This is Larry Bot's brain
-
+    
     console.log("Welcome to Larry Brain 1.0");
 
     function sleep(miliseconds) {
@@ -7,21 +7,6 @@
 
              while (currentTime + miliseconds >= new Date().getTime()) {
              }
-    }
-
-    var sentimentURL = "http://access.alchemyapi.com/calls/text/TextGetTextSentiment";
-
-    function emotions(text) {
-
-      var request = require('request');
-
-      var response = {
-        apikey: alchemy,//required
-        text: text, //req
-        outputMode: 'json', //optional
-      }
-
-      request.post(response);
     }
 
     var tpw = 470; //average time to say a single word
@@ -66,6 +51,7 @@
 
               var timing = getTiming(speechLog);
               window.setTimeout("annyang.resume()", timing); //time it according to size of string
+              emotions(speechLog);
     }
 
     function setUpMeeting1(date, time) {

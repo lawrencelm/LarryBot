@@ -11,7 +11,7 @@
         width = window.innerWidth;
         height = 800;
         target = {x: width/2, y: height/2};
-        var npoints = 5; //number of points it has to find
+        var npoints = bodyStress; //number of points it has to find
 
         largeHeader = document.getElementById('large');
         largeHeader.style.height = 800+'px';
