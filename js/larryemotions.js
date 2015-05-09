@@ -64,5 +64,5 @@
     }
 
     function changeBody() { //reloads the body's javascript file and removes previous one
-        reload_js("js/larrybody.js");
+        reload_js(bodyLocation); //From larrycustom.js, which is local
     }
