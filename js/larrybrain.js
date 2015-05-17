@@ -12,6 +12,11 @@
     var tpw = 470; //average time to say a single word
     var fwt = 6000; //how long it usually takes to say the first word (it's longer than the following words)
 
+    function redirect() {
+              var speechLog = "Hello. Welcome to Lawrence\'s personal website. How may I help you? I can help you find information and do any tasks you need.";
+              responsiveVoice.speak(speechLog, 'UK English Male');
+    }
+
     function getTiming(speechLog) {
               var pp = 0;//(speechLog.match(new RegExp(". ", "g")) || []).length;
               var cp = (speechLog.match(/,/g) || []).length;
