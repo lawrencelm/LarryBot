@@ -446,7 +446,7 @@
 				height: 5em;
 				line-height: 4.5em;
 				padding: 0;
-				background-image: url('images/dark-arrow.svg');
+				background-image: url('images/larry_logo_dark.png');
 				background-position: center center;
 				background-repeat: no-repeat;
 				text-indent: -10em;
@@ -476,16 +476,18 @@
 
 			.button.style2 {
 				background-color: transparent;
-				border: solid 2px #e5e6e7;
+				/*border: solid 2px #e5e6e7;*/
 				color: inherit;
 			}
 
 				.button.style2:hover {
-					background-color: rgba(145,146,147,0.035);
+					/*background-color: rgba(145,146,147,0.035);*/
+					/*background-color: red;*/
+					background-color: #056768;
 				}
 				
 				.button.style2.down {
-					background-image: url('images/arrow.svg');
+					background-image: url('images/larry_logo.png');
 				}
 
 	/* Box */
@@ -636,7 +638,7 @@
 				}
 				
 				.dark .button.style2.down {
-					background-image: url('images/dark-arrow.svg');
+					background-image: url('images/larry_logo.png');
 				}
 		
 /*********************************************************************************/

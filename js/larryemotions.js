@@ -1,7 +1,11 @@
+    
+    //initializing backend for Larry Bot's memory
+    Parse.initialize(memoryID, memoryKey);
+    
     var howImFeeling = 0;
     var bodyStress = 5;
 
-    function emotions(text) {
+    function emotions(text) {//, userQuery) {
 
       var param = {
         apikey: alchemy,//required
@@ -36,6 +40,12 @@
       console.log(request.status);
       console.log(request.statusText);
       console.log(request.responseText);
+
+      var piece = Parse.Object.extend("MemoryPiece"); //piece of memory
+      var piece = new MemoryPiece();
+      piece.save({response: text, userQuery: ""}).then(function(object) { //how to I also save the user query???
+        console.log("yay! it worked");
+      });
     }
 
     function expressEmotions() {
